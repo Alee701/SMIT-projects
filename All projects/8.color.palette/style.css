@@ -1,0 +1,115 @@
+body {
+    background: #3c40c6;
+    
+}
+     
+
+header {
+    display: flex;
+    height: 100px;
+    width: 70%;
+    align-items: center;
+    justify-content: space-around;
+}
+.menu {
+    padding-left: 30px;
+}
+
+h3 {
+
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: end;
+    justify-items: center;
+    margin-left: 200px;
+    
+}
+
+header a{
+    
+    color: #fff;
+    padding: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    }
+
+.New {
+    background: red;
+    padding: 2px 4px;
+    width: 25px;
+    height: 15px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-size: small;
+    
+}
+
+
+div .body1, .body2, .body3 {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+div #box {
+    margin: 20px;
+    width: 300px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    cursor: pointer;
+    
+}
+
+#box p {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    
+    
+    }
+img {
+    width:290px;
+    height: 130px;
+    padding: 4px;
+    
+}
+
+#fbox img {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+}
+
+ 
+.labelbox {
+    
+    padding: 12px;
+    height: 56px;
+    align-content: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: #0c2461;
+    border-radius: 4px;
+    width: 950px;
+    
+    
+
+}
+.inner p{
+    display: inline-block;
+    position: relative;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    justify-content: space-around;
+}

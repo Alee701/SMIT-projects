@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 10;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+
+  h1, h3 {
+    text-align: center;
+    color: #333;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+
+  }
+
+  th {
+    background-color: #3D3B40;
+    color: white;
+  }
+
+  td {
+    background-color: #fff;
+  }
+  #none {
+    background-color: #7FC7D9;
+  }
+  #Namaz {background-color: #365486;
+    color: white;
+  }
+  #Day
+  {background-color: #525CEB; 
+    color: #F8EDFF;    
+  }
+  #Free {
+    background-color: #2D9596;
+    color: white;
+  }
+  h2 {text-align: center;}
+
+  footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}

@@ -1,0 +1,88 @@
+body {
+    font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+
+
+
+  .lcontainer {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    font-size: 25px;    
+    width: 450px;
+    }
+
+  
+  img {
+    height: 50px;
+    
+}
+.rcontainer {
+width: 420px;
+height: 350px;
+position: absolute;
+top: 20%;
+left: 57%;
+background-color: white;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+
+ 
+  
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+ 
+
+  
+  input {
+    margin-top: 15px;
+    width: 370px;
+    height: 30px;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    font-size: 17px;
+    }
+  
+  .login {
+    width: 390px;
+    padding: 12px 25px;
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  hr {
+    width: 400px;
+  }
+
+.create {
+    margin-left: 27%;
+    padding: 10px 18px;
+    background-color: #42b72A;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .create:hover {
+    background-color: #3ca726;
+  }
+
+.bottom {
+    text-align: right;
+    margin-right: 260px;
+    margin-top: 520px;
+}
+    
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        header {
+    list-style-type: none;
+    margin: 5;
+    padding: 5;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+        
+        footer {
+    list-style-type: none;
+    margin: 5;
+    padding: 5;
+    overflow: hidden;
+    background-color: #00bbff;
+    color: white;
+    text-align: center;
+}
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Form</h1>
+        <hr>
+        </header>
+    <form> 
+        <p>
+           Name: 
+            <input type="text" placeholder="Input your name" 
+            size="30"  name="username" required
+            />
+        </p>
+        <p>
+            Email: 
+             <input type="text" placeholder="Your Email address" 
+             size="30" required
+             />
+         </p>
+        <p>
+            Contact: 
+             <input type="number" size="15" maxlength="11" required />
+         </p>
+         <p>
+            Address: 
+             <input type="text" placeholder="Your address" 
+             size="40" required
+             />
+         </p>
+        
+        
+            <p>Please select your favorite genre:
+                <br />
+                <input type="radio" name="gender" value="male" id="male"
+                checked="checked"/>
+                <label for="male">Male</label>
+                <input type="radio" name="gender"  value="female" id="female"/> 
+                <label for="female">Female</label>
+                </p>
+                
+                
+                <p>What is your expertise in?</p>
+                <select required>
+                    <option value="Web Developer"  selected> Web Developer</option>
+                    <option value="Social media marketing"> Social media marketing</option>
+                    <option value="Graphic Designer"> Graphic Designer</option>
+                </select>
+                <br />
+
+                <p>Please give some comments</p>
+            <textarea cols="50" rows="10" placeholder="comments"></textarea>
+                 <br>
+                 <br>              
+                
+                 <label for="myfile">Select a file:</label>
+                 <br>
+                 <input type="file" id="myfile" name="myfile">
+                <br>
+                <br>
+                <br><hr>
+                 <input type="submit" value="Submit"/> 
+                </form>
+                <br>
+                <br>
+                <footer>
+    <a href="index.html">Return to Home
+    </footer>
+
+</body>
+</html>
