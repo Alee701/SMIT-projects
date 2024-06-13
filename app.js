@@ -97,6 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 alert('You are not authorized to edit this project.');
             }
+        } else if (e.target.classList.contains('delete-button')) {
+            if (isAdmin) {
+                const projectBox = e.target.closest('.project-box');
+                const title = projectBox.querySelector('h3').innerText;
+                projects = projects.filter(project => project.title !== title);
+                localStorage.setItem('projects', JSON.stringify(projects));
+                renderProjects();
+            } else {
+                alert('You are not authorized to delete this project.');
+            }
         }
     });
 
