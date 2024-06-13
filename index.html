@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Display</title>
+    <script src="https://kit.fontawesome.com/57fbb9a21d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <nav class="navbar">
+            <a href="#about">About Me</a>
+            <a href="#" class="social-icon" target="blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon" target="blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon" target="blank"><i class="fab fa-github"></i></a>
+            <a href="https://facebook.com/alee.701" class="social-icon" target=”blank”><i class="fab fa-facebook"></i></a>
+            <button id="add-project-button" class="header-button">Add Project</button>
+            <button id="login-button" class="header-button">Login</button>
+        </nav>
+        <div class="hamburger-menu">☰</div>
+    </header>
+
+    <div class="slider-nav">
+        <a href="#about">About Me</a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <button id="add-project-button" class="header-button">Add Project</button>
+        <button id="login-button" class="header-button">Login</button>
+    </div>
+
+    <section id="intro">
+        <video autoplay muted loop id="background-video">
+            <source src="assets/video-background-motion-graphics-animated-backgr-2023-11-27-05-04-42-utc.mp4" type="video/mp4">
+        </video>
+        <div class="intro-text">
+            <h1>Welcome to My Projects</h1>
+            <p>Explore my work and projects below</p>
+        </div>
+    </section>
+
+    <section id="search-and-categories">
+        <input type="text" id="search-bar" placeholder="Search by title or description">
+        <div class="category-buttons">
+            <button class="category" data-category="all">All</button>
+            <button class="category" data-category="html">HTML</button>
+            <button class="category" data-category="css">CSS</button>
+            <button class="category" data-category="javascript">JavaScript</button>
+        </div>
+        <button id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    </section>
+
+    <section id="projects">
+        <!-- Projects will be dynamically added here -->
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 My Portfolio</p>
+            <div class="footer-links">
+                <a href="#about">About Me</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="add-project-popup" class="popup">
+        <form id="add-project-form">
+            <h2>Add Project</h2>
+            <input type="text" id="project-title" placeholder="Project Title" required>
+            <textarea id="project-description" placeholder="Project Description" required></textarea>
+            <input type="text" id="project-url" placeholder="Project URL" required>
+            <input type="text" id="github-url" placeholder="GitHub URL" required>
+            <select id="project-category" required>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+            </select>
+            <button type="submit">Save Project</button>
+            <button type="button" id="close-popup">Close</button>
+        </form>
+    </div>
+
+    <div id="edit-project-popup" class="popup">
+        <form id="edit-project-form">
+            <h2>Edit Project</h2>
+            <input type="text" id="edit-project-title" placeholder="Project Title" required>
+            <textarea id="edit-project-description" placeholder="Project Description" required></textarea>
+            <input type="text" id="edit-project-url" placeholder="Project URL" required>
+            <input type="text" id="edit-github-url" placeholder="GitHub URL" required>
+            <select id="edit-project-category" required>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+            </select>
+            <button type="submit">Save Changes</button>
+            <button type="button" id="close-edit-popup">Close</button>
+        </form>
+    </div>
+
+    <div id="login-popup" class="popup">
+        <form id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <button type="button" id="close-login-popup">Close</button>
+        </form>
+    </div>
+
+    <div id="login-success-popup" class="popup">
+        <h2>Login Successful!</h2>
+        <button type="button" id="close-login-success-popup">Close</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
