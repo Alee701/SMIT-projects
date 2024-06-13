@@ -28,6 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
         renderProjects();
     }
 
+    // Initialize sortable
+    new Sortable(projectsContainer, {
+        animation: 150,
+        ghostClass: 'sortable-ghost',
+        onEnd: (event) => {
+            // Update projects array based on new order
+            const movedProject = projects.splice(event.oldIndex, 1)[0];
+            projects.splice(event.newIndex, 0, movedProject);
+            localStorage.setItem('projects', JSON.stringify(projects));
+            renderProjects();
+        }
+    });
+
     // Toggle mobile navigation
     hamburgerMenu.addEventListener('click', () => {
         sliderNav.classList.toggle('open');
@@ -223,4 +236,3 @@ document.addEventListener('DOMContentLoaded', () => {
         return projects.some(project => project.title.toLowerCase() === title.toLowerCase());
     }
 });
-

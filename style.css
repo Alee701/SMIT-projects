@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     margin: 0;
@@ -202,6 +202,7 @@ header {
 .back-to-top:hover {
     background-color: #0056b3;
 }
+
 i {
     margin-left: 8px;
 }
@@ -279,6 +280,11 @@ i {
     left: 0;
 }
 
+.sortable-ghost {
+    opacity: 0.4;
+    background-color: #e0e0e0;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -288,4 +294,3 @@ i {
         opacity: 1;
     }
 }
-
