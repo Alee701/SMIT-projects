@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="video-background">
+        <video id="bg-video" autoplay loop muted>
+            <source src="https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Weather App</h1>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Enter city">
+                <button id="add-city-btn">Add City</button>
+            </div>
+        </header>
+        <div id="current-weather">
+            <h2 id="current-city"></h2>
+            <div id="weather-icon"></div>
+            <p id="current-temp"></p>
+            <p id="current-desc"></p>
+            <div id="additional-info"></div>
+        </div>
+        <div id="saved-cities-container">
+            <ul id="city-list">
+                <!-- Saved cities will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

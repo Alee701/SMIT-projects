@@ -14,7 +14,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #1f1f1f;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(50px);
     position: fixed;
     width: 100%;
     top: 0;
@@ -210,15 +212,20 @@ i {
 .popup {
     display: none;
     position: fixed;
+    min-width: 300px;
+    min-height: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.559);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px); 
+    color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     z-index: 1000;
-    color: #000000;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .popup h2 {
@@ -235,6 +242,8 @@ i {
     padding: 10px 20px;
     margin: 10px;
     cursor: pointer;
+    background-color: #007bff;
+    color: white;
 }
 
 @media (max-width: 768px) {
