@@ -30,7 +30,7 @@ function updateCurrentWeather(data) {
     const city = data.location.name;
     const tempC = data.current.temp_c;
     const desc = data.current.condition.text;
-    const iconUrl = data.current.condition.icon;
+    const iconUrl = `https:${data.current.condition.icon}`;
     const isDay = data.current.is_day;
 
     document.getElementById('current-city').textContent = city;
@@ -69,13 +69,13 @@ function updateBackgroundVideo(isDay, weatherCondition) {
     } else if (weatherCondition.includes('autumn')) {
         videoSrc = isDay ? 'https://videos.pexels.com/video-files/3105317/3105317-hd_1920_1080_24fps.mp4' : 'https://videos.pexels.com/video-files/3105317/3105317-hd_1920_1080_24fps.mp4';
     } else if (weatherCondition.includes('sunset')) {
-        videoSrc = isDay ? 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4' : 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4';
+        videoSrc = 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4';
     } else if (weatherCondition.includes('sunrise')) {
-        videoSrc = isDay ? 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4';
+        videoSrc = 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4';
     } else if (weatherCondition.includes('fog')) {
-        videoSrc = isDay ? 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4' : 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4';
+        videoSrc = 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4';
     } else if (weatherCondition.includes('sunny')) {
-        videoSrc = isDay ? 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4' : 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4';
+        videoSrc = 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4';
     } else {
         videoSrc = isDay ? 'https://videos.pexels.com/video-files/857251/857251-hd_1620_1080_25fps.mp4' : 'https://videos.pexels.com/video-files/857251/857251-hd_1620_1080_25fps.mp4';
     }
@@ -105,7 +105,7 @@ function renderSavedCity(data) {
 
     const cityName = data.location.name;
     const tempC = data.current.temp_c;
-    const iconUrl = data.current.condition.icon;
+    const iconUrl = `https:${data.current.condition.icon}`;
 
     cityItem.innerHTML = `
         <span>${cityName}</span>
