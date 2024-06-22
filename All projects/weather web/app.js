@@ -16,7 +16,7 @@ function addCity() {
 
 async function getWeather(city) {
     try {
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=&q=London&aqi=403`);
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=&q=London&aqi=no`);
         if (!response.ok) throw new Error('City not found!');
         const data = await response.json();
         updateCurrentWeather(data);
