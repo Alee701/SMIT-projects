@@ -1,6 +1,6 @@
 // app.js
 
-const apiKey = '1edcd2bca73c4e928f1211628242006'; // Replace with your actual WeatherAPI key
+const apiKey = 'a72aa177c7954419821123158242206'; 
 const savedCities = new Set();
 
 document.getElementById('add-city-btn').addEventListener('click', addCity);
@@ -16,7 +16,7 @@ function addCity() {
 
 async function getWeather(city) {
     try {
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`);
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=&q=London&aqi=403`);
         if (!response.ok) throw new Error('City not found!');
         const data = await response.json();
         updateCurrentWeather(data);
