@@ -1,3 +1,5 @@
+// app.js
+
 const apiKey = '1edcd2bca73c4e928f1211628242006'; // Replace with your actual WeatherAPI key
 const savedCities = new Set();
 
@@ -9,13 +11,12 @@ function addCity() {
         getWeather(city);
         document.getElementById('city-input').value = '';
         savedCities.add(city.toLowerCase());
-        saveToLocalStorage();
     }
 }
 
 async function getWeather(city) {
     try {
-        const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`);
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`);
         if (!response.ok) throw new Error('City not found!');
         const data = await response.json();
         updateCurrentWeather(data);
@@ -124,25 +125,14 @@ function removeCity(city) {
         if (item.querySelector('.remove-btn').dataset.city === city) {
             cityList.removeChild(item);
             savedCities.delete(city);
-            saveToLocalStorage();
             break;
         }
     }
 }
 
-function saveToLocalStorage() {
-    localStorage.setItem('savedCities', JSON.stringify(Array.from(savedCities)));
-}
-
-function loadFromLocalStorage() {
-    const storedCities = JSON.parse(localStorage.getItem('savedCities'));
-    if (storedCities) {
-        storedCities.forEach(city => {
-            savedCities.add(city);
-            getWeather(city);
-        });
-    }
-}
-
 // Initial load
-document.addEventListener('DOMContentLoaded', loadFromLocalStorage);
+document.addEventListener('DOMContentLoaded', () => {
+    // Add any initial cities you want to display on load
+    const initialCities = ['Karachi', 'London'];
+    initialCities.forEach(city => getWeather(city));
+});
