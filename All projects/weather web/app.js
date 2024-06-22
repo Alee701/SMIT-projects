@@ -1,10 +1,10 @@
-const apiKey = 'a72aa177c7954419821123158242206'; // Replace with your actual WeatherAPI key
+const apiKey = 'dc92936dc587ec90fb7d7cbf1a0bd2a9';
 const savedCities = new Set();
 
 document.getElementById('add-city-btn').addEventListener('click', addCity);
 
 function addCity() {
-    const city = document.getElementById('city-input').value;
+    const city = document.getElementById('city-input').value.trim();
     if (city && !savedCities.has(city.toLowerCase())) {
         getWeather(city);
         document.getElementById('city-input').value = '';
@@ -15,7 +15,7 @@ function addCity() {
 
 async function getWeather(city) {
     try {
-        const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
         if (!response.ok) throw new Error('City not found!');
         const data = await response.json();
         updateCurrentWeather(data);
@@ -26,11 +26,11 @@ async function getWeather(city) {
 }
 
 function updateCurrentWeather(data) {
-    const city = data.location.name;
-    const tempC = data.current.temp_c;
-    const desc = data.current.condition.text;
-    const iconUrl = data.current.condition.icon;
-    const isDay = data.current.is_day;
+    const city = data.name;
+    const tempC = data.main.temp;
+    const desc = data.weather[0].description;
+    const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    const isDay = data.dt > data.sys.sunrise && data.dt < data.sys.sunset;
 
     document.getElementById('current-city').textContent = city;
     document.getElementById('current-temp').textContent = `Temp: ${tempC.toFixed(1)}° C`;
@@ -41,13 +41,13 @@ function updateCurrentWeather(data) {
     updateCurrentWeatherDiv(isDay);
 
     document.getElementById('additional-info').innerHTML = `
-        <div class="additional-info-item">Feels like: ${data.current.feelslike_c.toFixed(1)}° C</div>
-        <div class="additional-info-item">Pressure: ${data.current.pressure_mb} hPa</div>
-        <div class="additional-info-item">Humidity: ${data.current.humidity}%</div>
-        <div class="additional-info-item">Visibility: ${data.current.vis_km * 1000} m</div>
-        <div class="additional-info-item">Wind Speed: ${data.current.wind_kph} kph</div>
-        <div class="additional-info-item">Wind Direction: ${data.current.wind_degree}°</div>
-        <div class="additional-info-item">Cloudiness: ${data.current.cloud}%</div>
+        <div class="additional-info-item">Feels like: ${data.main.feels_like.toFixed(1)}° C</div>
+        <div class="additional-info-item">Pressure: ${data.main.pressure} hPa</div>
+        <div class="additional-info-item">Humidity: ${data.main.humidity}%</div>
+        <div class="additional-info-item">Visibility: ${data.visibility} m</div>
+        <div class="additional-info-item">Wind Speed: ${data.wind.speed} m/s</div>
+        <div class="additional-info-item">Wind Direction: ${data.wind.deg}°</div>
+        <div class="additional-info-item">Cloudiness: ${data.clouds.all}%</div>
     `;
 }
 
@@ -102,9 +102,9 @@ function renderSavedCity(data) {
     const cityItem = document.createElement('li');
     cityItem.className = 'saved-city';
 
-    const cityName = data.location.name;
-    const tempC = data.current.temp_c;
-    const iconUrl = data.current.condition.icon;
+    const cityName = data.name;
+    const tempC = data.main.temp;
+    const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
     cityItem.innerHTML = `
         <span>${cityName}</span>
