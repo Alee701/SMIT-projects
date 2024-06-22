@@ -56,27 +56,27 @@ function updateBackgroundVideo(isDay, weatherCondition) {
     let videoSrc = '';
 
     if (weatherCondition.includes('clear')) {
-        videoSrc = isDay ? 'videos/clear-day.mp4' : 'videos/clear-night.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/852286/852286-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/852286/852286-hd_1920_1080_30fps.mp4';
     } else if (weatherCondition.includes('cloud')) {
-        videoSrc = isDay ? 'videos/cloudy-day.mp4' : 'videos/cloudy-night.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/5535208/5535208-uhd_2560_1440_30fps.mp4' : 'https://videos.pexels.com/video-files/5535208/5535208-uhd_2560_1440_30fps.mp4';
     } else if (weatherCondition.includes('rain')) {
-        videoSrc = isDay ? 'videos/rainy-day.mp4' : 'videos/rainy-night.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/4323285/4323285-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/5170597/5170597-hd_1920_1080_24fps.mp4';
     } else if (weatherCondition.includes('snow')) {
-        videoSrc = isDay ? 'videos/snowy-day.mp4' : 'videos/snowy-night.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/857032/857032-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/856381/856381-hd_1920_1080_30fps.mp4';
     } else if (weatherCondition.includes('thunderstorm')) {
-        videoSrc = isDay ? 'videos/thunderstorm-day.mp4' : 'videos/thunderstorm-night.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/6190836/6190836-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/5324177/5324177-hd_1280_720_30fps.mp4';
     } else if (weatherCondition.includes('autumn')) {
-        videoSrc = isDay ? 'videos/autumn-day.mp4' : 'videos/autumn-night.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/3105317/3105317-hd_1920_1080_24fps.mp4' : 'https://videos.pexels.com/video-files/3105317/3105317-hd_1920_1080_24fps.mp4';
     } else if (weatherCondition.includes('sunset')) {
-        videoSrc = 'videos/sunset.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4' : 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4';
     } else if (weatherCondition.includes('sunrise')) {
-        videoSrc = 'videos/sunrise.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4';
     } else if (weatherCondition.includes('fog')) {
-        videoSrc = isDay ? 'videos/fog-day.mp4' : 'videos/fog-night.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4' : 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4';
     } else if (weatherCondition.includes('sunny')) {
-        videoSrc = 'videos/sunny-day.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4' : 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4';
     } else {
-        videoSrc = isDay ? 'videos/other-day.mp4' : 'videos/other-night.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/857251/857251-hd_1620_1080_25fps.mp4' : 'https://videos.pexels.com/video-files/857251/857251-hd_1620_1080_25fps.mp4';
     }
 
     if (videoElement.src !== videoSrc) {
