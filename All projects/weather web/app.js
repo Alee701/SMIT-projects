@@ -29,7 +29,7 @@ function updateCurrentWeather(data) {
     const city = data.name;
     const tempC = data.main.temp;
     const desc = data.weather[0].description;
-    const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     const isDay = data.dt > data.sys.sunrise && data.dt < data.sys.sunset;
 
     document.getElementById('current-city').textContent = city;
@@ -104,7 +104,7 @@ function renderSavedCity(data) {
 
     const cityName = data.name;
     const tempC = data.main.temp;
-    const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
     cityItem.innerHTML = `
         <span>${cityName}</span>
