@@ -1,6 +1,4 @@
-// app.js
-
-const apiKey = 'a72aa177c7954419821123158242206'; 
+const apiKey = 'a72aa177c7954419821123158242206'; // Replace with your actual WeatherAPI key
 const savedCities = new Set();
 
 document.getElementById('add-city-btn').addEventListener('click', addCity);
@@ -11,12 +9,13 @@ function addCity() {
         getWeather(city);
         document.getElementById('city-input').value = '';
         savedCities.add(city.toLowerCase());
+        saveToLocalStorage();
     }
 }
 
 async function getWeather(city) {
     try {
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=&q=London&aqi=no`);
+        const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`);
         if (!response.ok) throw new Error('City not found!');
         const data = await response.json();
         updateCurrentWeather(data);
@@ -30,7 +29,7 @@ function updateCurrentWeather(data) {
     const city = data.location.name;
     const tempC = data.current.temp_c;
     const desc = data.current.condition.text;
-    const iconUrl = `https:${data.current.condition.icon}`;
+    const iconUrl = data.current.condition.icon;
     const isDay = data.current.is_day;
 
     document.getElementById('current-city').textContent = city;
@@ -69,13 +68,13 @@ function updateBackgroundVideo(isDay, weatherCondition) {
     } else if (weatherCondition.includes('autumn')) {
         videoSrc = isDay ? 'https://videos.pexels.com/video-files/3105317/3105317-hd_1920_1080_24fps.mp4' : 'https://videos.pexels.com/video-files/3105317/3105317-hd_1920_1080_24fps.mp4';
     } else if (weatherCondition.includes('sunset')) {
-        videoSrc = 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4' : 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4';
     } else if (weatherCondition.includes('sunrise')) {
-        videoSrc = 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4';
     } else if (weatherCondition.includes('fog')) {
-        videoSrc = 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4' : 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4';
     } else if (weatherCondition.includes('sunny')) {
-        videoSrc = 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4' : 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4';
     } else {
         videoSrc = isDay ? 'https://videos.pexels.com/video-files/857251/857251-hd_1620_1080_25fps.mp4' : 'https://videos.pexels.com/video-files/857251/857251-hd_1620_1080_25fps.mp4';
     }
@@ -105,7 +104,7 @@ function renderSavedCity(data) {
 
     const cityName = data.location.name;
     const tempC = data.current.temp_c;
-    const iconUrl = `https:${data.current.condition.icon}`;
+    const iconUrl = data.current.condition.icon;
 
     cityItem.innerHTML = `
         <span>${cityName}</span>
@@ -125,14 +124,25 @@ function removeCity(city) {
         if (item.querySelector('.remove-btn').dataset.city === city) {
             cityList.removeChild(item);
             savedCities.delete(city);
+            saveToLocalStorage();
             break;
         }
     }
 }
 
+function saveToLocalStorage() {
+    localStorage.setItem('savedCities', JSON.stringify(Array.from(savedCities)));
+}
+
+function loadFromLocalStorage() {
+    const storedCities = JSON.parse(localStorage.getItem('savedCities'));
+    if (storedCities) {
+        storedCities.forEach(city => {
+            savedCities.add(city);
+            getWeather(city);
+        });
+    }
+}
+
 // Initial load
-document.addEventListener('DOMContentLoaded', () => {
-    // Add any initial cities you want to display on load
-    const initialCities = ['Karachi', 'London'];
-    initialCities.forEach(city => getWeather(city));
-});
+document.addEventListener('DOMContentLoaded', loadFromLocalStorage);
