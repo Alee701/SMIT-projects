@@ -50,19 +50,35 @@ function updateWeather(data) {
     weatherDetail.style.backgroundColor = detailBgColor;
 
     const conditionText = data.current.condition.text.toLowerCase();
-    if (conditionText.includes('sunny')) {
-        videoSrc = 'https://videos.pexels.com/video-files/6989014/6989014-sd_640_360_25fps.mp4';
+    if (conditionText.includes('clear')) {
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/852286/852286-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/852286/852286-hd_1920_1080_30fps.mp4';
+    } else if (conditionText.includes('cloud')) {
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/5535208/5535208-uhd_2560_1440_30fps.mp4' : 'https://videos.pexels.com/video-files/5535208/5535208-uhd_2560_1440_30fps.mp4';
     } else if (conditionText.includes('rain')) {
-        videoSrc = 'rain.mp4';
-    } else if (conditionText.includes('thunder')) {
-        videoSrc = 'thunderstorm.mp4';
-    } else if (conditionText.includes('fog')) {
-        videoSrc = 'fog.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/4323285/4323285-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/5170597/5170597-hd_1920_1080_24fps.mp4';
     } else if (conditionText.includes('snow')) {
-        videoSrc = 'snow.mp4';
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/857032/857032-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/856381/856381-hd_1920_1080_30fps.mp4';
+    } else if (conditionText.includes('thunderstorm')) {
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/6190836/6190836-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/5324177/5324177-hd_1280_720_30fps.mp4';
+    } else if (conditionText.includes('autumn')) {
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/3105317/3105317-hd_1920_1080_24fps.mp4' : 'https://videos.pexels.com/video-files/3105317/3105317-hd_1920_1080_24fps.mp4';
+    } else if (conditionText.includes('sunset')) {
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4' : 'https://videos.pexels.com/video-files/856973/856973-uhd_2560_1440_25fps.mp4';
+    } else if (conditionText.includes('sunrise')) {
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4' : 'https://videos.pexels.com/video-files/854638/854638-hd_1920_1080_30fps.mp4';
+    } else if (conditionText.includes('fog')) {
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4' : 'https://videos.pexels.com/video-files/2534297/2534297-uhd_2560_1440_30fps.mp4';
+    } else if (conditionText.includes('sunny')) {
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4' : 'https://videos.pexels.com/video-files/2569168/2569168-hd_1920_1080_24fps.mp4';
+    } else {
+        videoSrc = isDay ? 'https://videos.pexels.com/video-files/857251/857251-hd_1620_1080_25fps.mp4' : 'https://videos.pexels.com/video-files/857251/857251-hd_1620_1080_25fps.mp4';
     }
 
-    backgroundVideo.src = videoSrc;
+    if (videoElement.src !== videoSrc) {
+        videoElement.src = videoSrc;
+        videoElement.load();
+        videoElement.play();
+    }
 }
 
 function searchCity(event) {
