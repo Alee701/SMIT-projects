@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchWeather(city) {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`)
         .then(response => response.json())
         .then(data => updateWeather(data))
         .catch(error => console.error('Error fetching weather:', error));
@@ -91,7 +91,7 @@ function updateSearchList(city) {
     searchItem.addEventListener('click', () => fetchWeather(city));
     searchList.appendChild(searchItem);
 
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`)
         .then(response => response.json())
         .then(data => {
             const tempSpan = document.createElement('span');
