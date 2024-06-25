@@ -123,6 +123,12 @@ header:hover {
     background-position: center;
 }
 
+#detail-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
 .search-list-container {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;

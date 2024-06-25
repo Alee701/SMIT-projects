@@ -31,11 +31,11 @@ function updateWeather(data) {
 
     // Update detailed weather information
     detailsContainer.innerHTML = `
-        <p><img src="icons/humidity.png" alt="Humidity"> Humidity: ${data.current.humidity}%</p>
-        <p><img src="icons/wind.png" alt="Wind"> Wind: ${data.current.wind_kph} kph</p>
-        <p><img src="icons/pressure.png" alt="Pressure"> Pressure: ${data.current.pressure_mb} mb</p>
-        <p><img src="icons/feelslike.png" alt="Feels Like"> Feels Like: ${data.current.feelslike_c}°C</p>
-        <p><img src="icons/uv.png" alt="UV Index"> UV Index: ${data.current.uv}</p>
+        <p><img id="detail-icon" src="https://cdn-icons-png.flaticon.com/128/5664/5664993.png" alt="Humidity"> Humidity: ${data.current.humidity}%</p>
+        <p><img id="detail-icon" src="https://cdn-icons-png.flaticon.com/128/2676/2676047.png" alt="Wind"> Wind: ${data.current.wind_kph} kph</p>
+        <p><img id="detail-icon" src="https://cdn-icons-png.flaticon.com/128/4115/4115904.png" alt="Pressure"> Pressure: ${data.current.pressure_mb} mb</p>
+        <p><img id="detail-icon" src="https://cdn-icons-png.flaticon.com/256/3923/3923762.png" alt="Feels Like"> Feels Like: ${data.current.feelslike_c}°C</p>
+        <p><img id="detail-icon" src="assets/uv.png" alt="UV Index"> UV Index: ${data.current.uv}</p>
     `;
     weatherDetail.classList.add('active');
 
