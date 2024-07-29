@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Scraper Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Email Scraper Tool</h1>
+        </header>
+        <main>
+            <form action="/scrape" method="post">
+                <label for="url">Enter URL:</label>
+                <input type="text" id="url" name="url" required>
+                <button type="submit">Scrape Emails</button>
+            </form>
+            
+            {% if emails %}
+            <div class="results">
+                <h2>Scraped Emails:</h2>
+                <ul>
+                    {% for email in emails %}
+                    <li>{{ email }}</li>
+                    {% endfor %}
+                </ul>
+                <form action="/export" method="post">
+                    <button type="submit">Export to CSV</button>
+                </form>
+            </div>
+            {% endif %}
+        
+            {% if error %}
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
+            {% endif %}
+            
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Email Scraper Tool</p>
+        </footer>
+    </div>
+</body>
+</html>

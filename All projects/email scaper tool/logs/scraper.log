@@ -1,0 +1,35 @@
+2024-07-29 08:48:23,864 - INFO - Starting email scraping...
+2024-07-29 08:48:23,865 - INFO - Extracting emails from https://example.com
+2024-07-29 08:48:27,542 - INFO - Total unique emails found: 0
+2024-07-29 08:48:27,543 - INFO - Emails saved to output/emails.csv
+2024-07-29 08:48:27,543 - INFO - Email scraping completed.
+2024-07-29 08:48:52,535 - INFO - Starting email scraping...
+2024-07-29 08:48:52,536 - INFO - Extracting emails from https://abc.com
+2024-07-29 08:48:56,709 - INFO - Total unique emails found: 0
+2024-07-29 08:48:56,710 - INFO - Emails saved to output/emails.csv
+2024-07-29 08:48:56,710 - INFO - Email scraping completed.
+2024-07-29 08:49:16,607 - INFO - Starting email scraping...
+2024-07-29 08:49:16,608 - INFO - Extracting emails from https://alpinesmm.com
+2024-07-29 08:49:22,642 - INFO - Total unique emails found: 1
+2024-07-29 08:49:22,643 - INFO - Emails saved to output/emails.csv
+2024-07-29 08:49:22,644 - INFO - Email scraping completed.
+2024-07-29 08:49:50,443 - INFO - Starting email scraping...
+2024-07-29 08:49:50,443 - INFO - Extracting emails from https://linkedin.com
+2024-07-29 08:49:54,019 - INFO - Total unique emails found: 0
+2024-07-29 08:49:54,020 - INFO - Emails saved to output/emails.csv
+2024-07-29 08:49:54,020 - INFO - Email scraping completed.
+2024-07-29 08:51:51,261 - INFO - Starting email scraping...
+2024-07-29 08:51:51,261 - INFO - Extracting emails from https://www.investopedia.com/
+2024-07-29 08:51:54,080 - INFO - Total unique emails found: 0
+2024-07-29 08:51:54,080 - INFO - Emails saved to output/emails.csv
+2024-07-29 08:51:54,081 - INFO - Email scraping completed.
+2024-07-29 08:52:35,135 - INFO - Starting email scraping...
+2024-07-29 08:52:35,136 - INFO - Extracting emails from https://www.trendily.io/
+2024-07-29 08:52:45,586 - INFO - Total unique emails found: 0
+2024-07-29 08:52:45,587 - INFO - Emails saved to output/emails.csv
+2024-07-29 08:52:45,587 - INFO - Email scraping completed.
+2024-07-29 08:53:23,357 - INFO - Starting email scraping...
+2024-07-29 08:53:23,357 - INFO - Extracting emails from https://github.com/
+2024-07-29 08:53:26,425 - INFO - Total unique emails found: 0
+2024-07-29 08:53:26,425 - INFO - Emails saved to output/emails.csv
+2024-07-29 08:53:26,426 - INFO - Email scraping completed.

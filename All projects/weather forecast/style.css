@@ -95,7 +95,7 @@ header:hover {
     align-items: center;
     justify-content: center;
     animation: fadeIn 2s;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 .weather-container:hover {
